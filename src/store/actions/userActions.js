@@ -1,7 +1,7 @@
 import { SET_CITY } from './actionTypes';
 import { getWeather } from './forecastActions';
 
-const setCity = city => ({
+export const setCity = city => ({
   type: SET_CITY,
   payload: city
 })

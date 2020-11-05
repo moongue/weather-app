@@ -5,6 +5,7 @@ import './Forecast.scss';
 
 const Forecast = ({ forecast }) => (
   <div className="forecast">
+    {console.log(forecast)}
     {forecast.map((item, idx) => (
       <Card
         temp={item.temp}

@@ -6,7 +6,7 @@ import Wrapper from '../../layouts/Wrapper/Wrapper';
 import Forecast from '../../components/Forecast/Forecast';
 import './Home.scss';
 
-const Home = (props) => {
+export const Home = (props) => {
   useEffect(() => {
     props.getUserInfo();
   }, []);

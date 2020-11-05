@@ -1,17 +1,17 @@
 import { SET_FORECAST } from './actionTypes';
 
-const setForecast = (forecast) => ({
+export const setForecast = (forecast) => ({
   type: SET_FORECAST,
   payload: forecast
 })
 
-function urlStringFromObject(options) {
+export function urlStringFromObject(options) {
   return Object.entries(options)
     .map(array => array.join('='))
     .join('&');
 }
 
-function getArrayObjectsWithRequiredOptions(array, ...options) {
+export function getArrayObjectsWithRequiredOptions(array, ...options) {
   return array.map(item => {
     const obj = {};
     options.forEach(option => {
