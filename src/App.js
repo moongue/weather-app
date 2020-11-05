@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.css';
+import Home from './pages/Home/Home';
 
 function App() {
   return (
-    <h1>Weather app</h1>
+    <Home />
   );
 }
 
