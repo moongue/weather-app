@@ -3,27 +3,22 @@ import Title from '../../components/Title/Title';
 import { connect } from 'react-redux';
 import { getUserInfo } from '../../store/actions/userActions';
 import Wrapper from '../../layouts/Wrapper/Wrapper';
+import Forecast from '../../components/Forecast/Forecast';
 import './Home.scss';
-
 
 const Home = (props) => {
   useEffect(() => {
     props.getUserInfo();
-    console.log(props.forecast);
   }, []);
 
   return (
     <Wrapper>
       <Title />
+      <Forecast />
     </Wrapper>
   );
 }
 
-function mapStateToProps(state) {
-  return {
-    forecast: state.forecast.forecast
-  }
-}
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -31,4 +26,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(null, mapDispatchToProps)(Home);

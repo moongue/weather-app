@@ -1,0 +1,42 @@
+@import "../../variables";
+
+.card {
+  height: 200px;
+  box-sizing: border-box;
+  flex-basis: 24%;
+  margin-top: 20px;
+  color: #fff;
+  border-radius: 4px;
+  background: linear-gradient(#2193b0, #6dd5ed);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.15);
+  padding: 15px;
+
+  @media #{$sm} {
+    flex-basis: 48%;
+  }
+
+  @media #{$xs} {
+    flex-basis: 100%;
+  }
+}
+
+.main {
+  margin-top: 60px;
+  display: flex;
+}
+
+.temp {
+  font-size: 56px;
+  position: relative;
+  &:after {
+    content: '°';
+  }
+}
+
+.description {
+  font-size: 18px;
+}
+
+.icon-weather {
+  font-size: 36px;
+}

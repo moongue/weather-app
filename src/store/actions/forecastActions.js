@@ -38,7 +38,7 @@ export const getWeather = city => async (dispatch) => {
     const res = await fetch(`${urlWeatherForecast}${requestString}`);
     const { data } = await res.json();
 
-    const forecast = getArrayObjectsWithRequiredOptions(data, 'temp', 'weather');
+    const forecast = getArrayObjectsWithRequiredOptions(data, 'temp', 'weather', 'valid_date');
 
     dispatch(setForecast(forecast));
   } catch (e) {
