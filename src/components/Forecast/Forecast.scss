@@ -1,0 +1,11 @@
+@import "../../variables";
+
+.forecast {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  @media #{$sm} {
+    flex-wrap: wrap;
+  }
+}
