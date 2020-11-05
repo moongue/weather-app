@@ -1,4 +1,5 @@
 import { SET_CITY } from './actionTypes';
+import { getWeather } from './forecastActions';
 
 const setCity = city => ({
   type: SET_CITY,
@@ -7,10 +8,12 @@ const setCity = city => ({
 
 export const getUserInfo = () => async (dispatch) => {
   try {
-    const res = await fetch(`https://ipinfo.io/json?token=${process.env.REACT_APP_API_IP_TOKEN}`);
+    const urlIpInfo = 'https://ipinfo.io/json?token=';
+    const res = await fetch(`${urlIpInfo}${process.env.REACT_APP_API_IP_TOKEN}`);
     const { city } = await res.json();
-
     dispatch(setCity(city));
+
+    dispatch(getWeather(city));
   } catch (e) {
     console.log(e)
   }

@@ -8,7 +8,7 @@ const Title = ({ city }) => (
 
 function mapStateToProps(state) {
   return {
-    city: state.forecast.city
+    city: state.user.city
   }
 }
 
