@@ -1,18 +1,28 @@
 import React, { useEffect } from 'react';
 import Title from '../../components/Title/Title';
 import { connect } from 'react-redux';
-import './Home.scss';
 import { getUserInfo } from '../../store/actions/userActions';
+import Wrapper from '../../layouts/Wrapper/Wrapper';
+import './Home.scss';
 
 
 const Home = (props) => {
   useEffect(() => {
     props.getUserInfo();
+    console.log(props.forecast);
   }, []);
 
   return (
-    <Title />
-  )
+    <Wrapper>
+      <Title />
+    </Wrapper>
+  );
+}
+
+function mapStateToProps(state) {
+  return {
+    forecast: state.forecast.forecast
+  }
 }
 
 function mapDispatchToProps(dispatch) {
@@ -21,4 +31,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Home);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
