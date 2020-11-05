@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './Title.scss';
 
-const Title = ({ city }) => (
+export const Title = ({ city }) => (
   <h1 className="title">{city}</h1>
 );
 
